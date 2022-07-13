@@ -1,0 +1,122 @@
+.newTask {
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.newTask input {        
+    background: var(--gray-500);
+    color: var(--gray-300);
+    font-weight:400;
+    border: 1px solid var(--gray-700);
+    border-radius: 5px;
+    height: 3.375rem;
+    width: 100%;
+    margin-top: calc(0px - 4.2rem);
+    padding: 0 1rem 0 1rem;
+}
+
+.newTask input:focus{
+    outline: transparent;
+    box-shadow: 0 0 0 1px var(--purple-dark);  
+    color: var(--gray-100);
+}
+
+.newTask button {
+    background: var(--blue-dark);
+    color: var(--white);
+    height: 3.25rem;
+    width: 5.625rem;
+    padding: 1rem;    
+    margin-top: calc(0px - 4.2rem);
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-size: 0.875rem;    
+    line-height: 1.225rem;
+    display:flex;
+    justify-content:center;    
+    gap:0.5rem;
+    transition: background-color 0.1s;
+}
+
+.newTask button:hover {
+    background: var(--blue);
+}
+
+.taskList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+    gap: 1.5rem;
+}
+
+.taskInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width:100%;  
+}
+
+.taskInfo div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;  
+}
+
+.taskInfo small {    
+    background: var(--gray-400);
+    color: var(--gray-200);
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 999px;
+    padding: 0.125rem 0.5rem;
+}
+
+.taskInfo .createdTasks a {
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.taskInfo .tasksDone a {
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--purple);
+    text-decoration: none;
+}
+
+.taskInfo a:hover{
+    border-bottom: 1px solid;
+}
+
+.taskItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;    
+}
+
+.taskItems ul {
+    list-style-type: none;
+    width:100%;
+}
+
+.emptyList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 1.5rem;
+    gap: 1rem;
+}
+
