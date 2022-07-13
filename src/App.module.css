@@ -5,8 +5,7 @@
     padding: 0 1rem;
 
     display: grid;
-    grid-template-columns: 736px 1fr;
-    gap: 2rem;
+    grid-template-columns: 736px 1fr;    
     align-items: flex-start;
 
 }

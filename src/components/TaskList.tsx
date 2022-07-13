@@ -1,12 +1,13 @@
 import { ChangeEvent, FormEvent, InvalidEvent, useEffect, useState } from "react";
 import { TaskItem } from "./TaskItem";
 import { PlusCircle }  from "phosphor-react"
+import {v4 as uuidv4} from 'uuid'
 import styles from "./TaskList.module.css"
 import clipboard from "../assets/clipboard.svg"
 
 interface TaskItem
 {
-    id:number;
+    id: string;
     checked: boolean;
     description: string;    
 }
@@ -32,16 +33,10 @@ export function TaskList()
 
     function handleCreateNewTask(event:FormEvent)
     {
-        event.preventDefault();
-
-        const nextId = 1 + (
-            taskList.length === 0 ? 
-                taskList.length :
-                Math.max(...taskList.map(task => task.id))
-        );
+        event.preventDefault();     
 
         const newTask = {
-            id: nextId,
+            id: uuidv4(),
             checked:false,
             description: newTaskDescription
         }
@@ -55,12 +50,12 @@ export function TaskList()
         event.target.setCustomValidity('Campo obrigatório!');
     }
 
-    function deleteTaskById(id:number)
+    function deleteTaskById(id:string)
     {
         setTaskList(taskList.filter(task=> task.id!=id));
     }
 
-    function finishTask(id:number, isDone:boolean)
+    function finishTask(id:string, isDone:boolean)
     {
         const taskIndex = taskList.findIndex(task=> task.id===id);
         
@@ -92,11 +87,11 @@ export function TaskList()
 
                 <header className={styles.taskInfo}>
                     <div className={styles.createdTasks}>
-                        <a href="#">Tarefas criadas</a>
+                        <span>Tarefas criadas</span>
                         <small>{taskList.length}</small>
                     </div>
                     <div className={styles.tasksDone}>
-                        <a href="#">Concluídas</a>
+                        <span>Concluídas</span>
                         <small>{`${taskDone} de ${taskList.length}`}</small>
                     </div>
                 </header>

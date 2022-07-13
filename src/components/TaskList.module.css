@@ -78,22 +78,16 @@
     padding: 0.125rem 0.5rem;
 }
 
-.taskInfo .createdTasks a {
+.taskInfo .createdTasks span {
     font-size: 14px;
     line-height: 17px;
-    color: var(--blue);
-    text-decoration: none;
+    color: var(--blue);    
 }
 
-.taskInfo .tasksDone a {
+.taskInfo .tasksDone span {
     font-size: 14px;
     line-height: 17px;
-    color: var(--purple);
-    text-decoration: none;
-}
-
-.taskInfo a:hover{
-    border-bottom: 1px solid;
+    color: var(--purple);    
 }
 
 .taskItems{

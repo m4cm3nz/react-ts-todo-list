@@ -11,15 +11,22 @@
     margin-bottom: 0.75rem;
 }
 
-.taskDescription{
-    width:100%
+.taskItem div{
+    width:100%;
+    font-weight: 400;
+    font-size: 0.875rem;
 }
 
 .taskDescription p{
-    font-weight: 400;
-    font-size: 0.875rem;
+
     color:var(--gray-100);
 }
+
+.taskDescriptionDone {
+    text-decoration-line: line-through;
+    color: var(--gray-300);
+}
+
 
 .taskItem input[type="checkbox"] {
     appearance: none;

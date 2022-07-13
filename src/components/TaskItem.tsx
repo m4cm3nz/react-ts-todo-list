@@ -3,7 +3,7 @@ import styles from "./TaskItem.module.css"
 import { ChangeEvent, useState } from "react"
 
 interface TaskItem{
-    id:number;
+    id:string;
     checked: boolean;
     description: string;
 }
@@ -11,8 +11,8 @@ interface TaskItem{
 interface TaskItemProps
 {
     task: TaskItem;
-    onDeleteTask: (id:number) => void;
-    onTaskDone: (id:number, isDone:boolean)=> void;
+    onDeleteTask: (id:string) => void;
+    onTaskDone: (id:string, isDone:boolean)=> void;
 }
 
 export function TaskItem({task, onDeleteTask, onTaskDone}:TaskItemProps) {
@@ -34,7 +34,7 @@ export function TaskItem({task, onDeleteTask, onTaskDone}:TaskItemProps) {
     return (
         <li className={styles.taskItem}>
             <input onChange={handleTaskDone} type="checkbox" checked={content.checked} />
-            <div className={styles.taskDescription}>
+            <div className={content.checked? styles.taskDescriptionDone: styles.taskDescription}>
                 <p>{content.description}</p>
             </div>
             <button 
